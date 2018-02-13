@@ -1,32 +1,61 @@
-﻿namespace Quiz_Beginners
+﻿namespace SYMC.GLOBALIZATION.LOCALIZATION
 {
     class CSharpBasics
     {
 
-        /// <summary>
-        /// Write a program and ask the user to enter the width and height of an image. Then tell if the image 
-        /// is landscape or portrait.
-        /// </summary>
-        /// 
+       public void LandscapeOrPortrait()
+        {
+           int Length;
+           int Breath;
+            
+           Console.WriteLine("Enter length of your image:");
+           Length = int.Parse(Console.ReadLine());
+           Console.WriteLine("Enter Breath of your image:");
+           Breath = int.Parse(Console.ReadLine());
+           if (Length < Breath)
+           {
+               Console.WriteLine("Your image is Landscape");
+           }
+            else if (Length > Breath)
+            {
+                Console.WriteLine("Your image is Portrait");
+            }
+            else
+            {
+                Console.WriteLine("Your image is square");
+            }
+            }
 
 
-
-
-        /// <summary>
-        /// Write a program which takes a single argument from the console, computes the factorial and prints the 
-        /// value on the console. For example, if the user enters 5, the program should calculate 5 x 4 x 3 x 2 x 1 
-        /// and display it as 5! = 120.
-        /// </summary>
-        /// 
-
-
-
-
-        /// <summary>
-        /// Ask the user to enter their name. Use an array to reverse the name and then store the result in a new string. 
-        /// Display the reversed name on the console.
-        /// </summary>
-        /// 
+        public void FactorialNumber()
+        {
+            int i, number, fact;
+            Console.WriteLine("Enter the Number");
+            number = int.Parse(Console.ReadLine());
+            fact = number;
+            for (i = number - 1; i >= 1; i--)
+            {
+                fact = fact * i;
+            }
+            Console.WriteLine("\nFactorial of Given Number is: " + fact);
+            Console.ReadLine();
+        }
+        
+        public void ReverseString()
+       {       
+                string Str, reversestring = "";
+                int Length;
+                Console.Write("Enter A String : ");
+                Str = Console.ReadLine();
+                Length = Str.Length - 1;
+                while (Length >= 0)
+                {
+                    reversestring = reversestring + Str[Length];
+                    Length--;
+                }
+                Console.WriteLine("Reverse  String  Is  {0}", reversestring);
+                Console.ReadLine();
+            }
 
 
 
@@ -36,7 +65,19 @@
         /// display a message: "Consecutive"; otherwise, display "Not Consecutive".
         /// </summary>
         /// 
+        
+        
+        static void Main(string[] args)
+        {
+          
+            CSharpBasics test = new CSharpBasics();
+            test.LandscapeOrPortrait();
+            test.FactorialNumber();
+            test.ReverseString();
+           
 
+
+        }
 
 
     }
